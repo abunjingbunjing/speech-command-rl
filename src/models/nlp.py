@@ -64,8 +64,7 @@ def build_nlp_pipeline():
     return Pipeline([
         ('tfidf', TfidfVectorizer(ngram_range=(1, 2), min_df=1)),
         ('clf',   LogisticRegression(max_iter=500, random_state=SEED,
-                                     C=1.0, solver='lbfgs',
-                                     multi_class='multinomial'))
+                                     C=1.0, solver='lbfgs'))
     ])
 
 
