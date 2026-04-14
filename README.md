@@ -1,3 +1,21 @@
+# Installation and Usage
+Open a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac) and run:
+
+1. git clone https://github.com/abunjingbunjing/speech-command-rl.git
+2. cd speech-command-rl
+3. python -m venv venv
+
+for windows:
+4. venv\Scripts\activate
+
+for mac/linux:
+4. source venv/bin/activate
+
+5. pip install -r requirements.txt
+6. bash run.sh
+
+All output files will be saved in experiments/results/
+
 # Data
 
 The dataset is downloaded automatically when you run the notebook.
