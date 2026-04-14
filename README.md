@@ -1,3 +1,6 @@
+# Video Demonstration and Discussion:
+https://drive.google.com/drive/folders/1qCdhFwhpodoYWLMgiXKURoCfmI_oibka?usp=sharing
+
 # Installation and Usage
 _notes by Julian Miguel Roxas_
 
