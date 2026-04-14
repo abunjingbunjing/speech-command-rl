@@ -5,10 +5,10 @@ Open a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac) and r
 2. cd speech-command-rl
 3. python -m venv venv
 
-4. for windows:
+4. environement activation
+for windows:
 venv\Scripts\activate
-
-4. for mac/linux:
+for mac/linux:
 source venv/bin/activate
 
 5. pip install -r requirements.txt
