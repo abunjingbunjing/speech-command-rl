@@ -1,5 +1,6 @@
 # Installation and Usage
 _notes by Julian Miguel Roxas_
+
 Open a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac) and run:
 
 1. git clone https://github.com/abunjingbunjing/speech-command-rl.git
