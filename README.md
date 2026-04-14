@@ -16,15 +16,25 @@ for mac/linux:
 
 source venv/bin/activate
 
-6. pip install -r requirements.txt
-7. bash run.sh
+6. In your Windows POWERSHELL:
+curl -o speech_commands_v0.02.tar.gz https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+
+7. mkdir data\speech_commands
+8. tar -xzf speech_commands_v0.02.tar.gz -C data\speech_commands
+9. pip install -r requirements.txt
+10. bash run.sh
 
 All output files will be saved in experiments/results/
 
 # Data
 
-The dataset is downloaded automatically when you run the notebook.
-It requires an internet connection and approximately 2.3GB of free space.
+Download the dataset file via browser
+
+Click this link to download directly:
+👉 https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+Your browser will download a file called "speech_commands_v0.02.tar.gz"
+It is about 2.3GB so it may take a few minutes depending on your internet speed
+By default it saves to your Downloads folder.
 
 To download manually:
 
