@@ -32,23 +32,25 @@ class SpeechCommandDataset(Dataset):
         return len(self.file_paths)
 
     def __getitem__(self, idx):
-        waveform, sr = torchaudio.load(self.file_paths[idx])
+        import librosa
+        import numpy as np
 
-        if waveform.shape[0] > 1:
-            waveform = waveform.mean(dim=0, keepdim=True)
-        if sr != 16000:
-            waveform = torchaudio.functional.resample(waveform, sr, 16000)
+        # Use librosa instead of torchaudio to load audio
+        waveform, sr = librosa.load(self.file_paths[idx], sr=16000, mono=True)
+        waveform = torch.tensor(waveform).unsqueeze(0)  # add channel dim → [1, samples]
 
+        # Pad or trim to exactly 1 second
         if waveform.shape[1] < 16000:
             waveform = torch.nn.functional.pad(waveform, (0, 16000 - waveform.shape[1]))
         else:
             waveform = waveform[:, :16000]
 
+        # Convert to mel-spectrogram
         mel = self.mel_transform(waveform)
         mel = self.db_transform(mel)
         mel = (mel - mel.min()) / (mel.max() - mel.min() + 1e-8)
-        return mel, self.labels[idx]
 
+        return mel, self.labels[idx]
 
 def build_loaders(data_dir=DATA_DIR, max_per_class=800, batch_size=64):
     label_to_idx = {cmd: i for i, cmd in enumerate(COMMANDS)}
@@ -70,11 +72,11 @@ def build_loaders(data_dir=DATA_DIR, max_per_class=800, batch_size=64):
     )
 
     train_loader = DataLoader(SpeechCommandDataset(X_train, y_train),
-                              batch_size=batch_size, shuffle=True,  num_workers=2)
+                              batch_size=64, shuffle=True,  num_workers=0)
     val_loader   = DataLoader(SpeechCommandDataset(X_val,   y_val),
-                              batch_size=batch_size, shuffle=False, num_workers=2)
+                              batch_size=64, shuffle=False, num_workers=0)
     test_loader  = DataLoader(SpeechCommandDataset(X_test,  y_test),
-                              batch_size=batch_size, shuffle=False, num_workers=2)
+                              batch_size=64, shuffle=False, num_workers=0)
 
     return train_loader, val_loader, test_loader
 
