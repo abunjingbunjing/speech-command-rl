@@ -14,7 +14,7 @@ np.random.seed(SEED)
 random.seed(SEED)
 
 COMMANDS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go']
-DATA_DIR  = Path('/content/speech_commands')
+DATA_DIR = Path('data/speech_commands')
 RESULTS_DIR = Path('experiments/results')
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
