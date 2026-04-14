@@ -16,7 +16,7 @@ for mac/linux:
 
 source venv/bin/activate
 
-6. In your Windows POWERSHELL:
+6. To download the data, in your Windows POWERSHELL:
 curl -o speech_commands_v0.02.tar.gz https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
 
 7. mkdir data\speech_commands
@@ -35,8 +35,3 @@ Click this link to download directly:
 Your browser will download a file called "speech_commands_v0.02.tar.gz"
 It is about 2.3GB so it may take a few minutes depending on your internet speed
 By default it saves to your Downloads folder.
-
-To download manually:
-
-wget https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
-tar -xzf speech_commands_v0.02.tar.gz -C ./speech_commands
