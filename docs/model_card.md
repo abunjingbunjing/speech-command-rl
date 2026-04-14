@@ -2,7 +2,7 @@
 
 ## Model details
 - Architecture: 3-layer Spectrogram CNN
-- Task: 10-class speech command classification
+- Task: Class Speech Command Classification
 - Framework: PyTorch
 
 ## Training data
