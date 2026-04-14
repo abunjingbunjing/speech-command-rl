@@ -7,6 +7,9 @@ pip install -r requirements.txt -q
 echo "=== Downloading dataset ==="
 python src/data_pipeline.py
 
+echo "== Initializing CNN Model =="
+python src/models/cnn.py
+
 echo "=== Training CNN model ==="
 python src/train.py
 
