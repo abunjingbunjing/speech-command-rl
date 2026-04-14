@@ -9,12 +9,15 @@ Open a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac) and r
 
 4. environement activation
 for windows:
+
 venv\Scripts\activate
+
 for mac/linux:
+
 source venv/bin/activate
 
-5. pip install -r requirements.txt
-6. bash run.sh
+6. pip install -r requirements.txt
+7. bash run.sh
 
 All output files will be saved in experiments/results/
 
