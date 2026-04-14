@@ -1,6 +1,6 @@
 # Deep learning
-torch>=2.0.0
-torchaudio>=2.0.0
+torch>=2.11.0
+torchaudio>=2.11.0
 torchvision>=0.15.0
 
 # Audio processing
